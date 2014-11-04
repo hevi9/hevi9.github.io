@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="URL_PREFIX/" rel="alternate"></link><link href="URL_PREFIX/feeds/pulling-with-egit.atom.xml" rel="self"></link><id>URL_PREFIX/</id><updated>2013-04-22T00:00:00+02:00</updated><entry><title>Pulling with Egit</title><link href="URL_PREFIX/pulling-with-egit.html" rel="alternate"></link><updated>2013-04-22T00:00:00+02:00</updated><author><name>Hevi</name></author><id>tag:,2013-04-22:URL_PREFIX/pulling-with-egit.html</id><summary type="html">&lt;p&gt;Pulling from remote repository with Egit does not
+always work right.&lt;/p&gt;
+&lt;p&gt;&amp;lt;project&amp;gt; -&amp;gt; Team -&amp;gt; Pull might give this:&lt;/p&gt;
+&lt;img alt="" src="URL_PREFIX/images/egit-pull-error.png" /&gt;
+&lt;p&gt;which is incorrect information.&lt;/p&gt;
+&lt;p&gt;Workaround is to revert command line git (as usual):&lt;/p&gt;
+&lt;img alt="" src="URL_PREFIX/images/egit-pull-error-really.png" style="width: 80%;" /&gt;
+</summary><category term="git"></category></entry></feed>

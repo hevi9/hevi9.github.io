@@ -1,42 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+          <title>Notes</title>
         <meta charset="utf-8" />
-        <title>Making remote git repository</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link href="URL_PREFIX/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Notes Full Atom Feed" />
+        <link href="URL_PREFIX/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Notes Categories Atom Feed" />
+        <link rel="stylesheet" href="./theme/css/main.css" />
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <meta name="tags" contents="git" />
 </head>
 
 <body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Notes </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/misc.html">misc</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/making-remote-git-repository.html" rel="bookmark"
-           title="Permalink to Making remote git repository">Making remote git repository</a></h1>
-    </header>
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-03-20T00:00:00">
-                Published: ke 20 maaliskuu 2013
-        </abbr>
+<div id="white">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/hevi.html">Hevi</a>
-        </address>
-<p>In <a href="/category/misc.html">misc</a>. </p>
-<p>tags: <a href="/tag/git.html">git</a> </p>
-</footer><!-- /.post-info -->      <p>To the remote server:</p>
+<div class="content">
+<article id="content" class="body">
+  <footer class="post-info">
+  <div class="published">2013-03-20</div>
+  
+  <ul class="tag-list">    <li class="tag-item"><a href="/tag/git.html">git</a></li>
+</ul>
+
+</footer>
+
+
+  <header>
+    <h2 class="entry-title">
+      <a href="./making-remote-git-repository.html" rel="bookmark"
+         title="Permalink to Making remote git repository">Making remote git repository</a></h2>
+ 
+  </header>
+  
+  <div class="entry-content">
+    <p>To the remote server:</p>
 <pre class="literal-block">
 local&gt; ssh remote.net
 &gt; cd /home/user/git
@@ -57,37 +54,38 @@ local&gt; ssh remote.net
 <li><a class="reference external" href="http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/">http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/</a></li>
 </ul>
 
-    </div><!-- /.entry-content -->
+  </div><!-- /.entry-content -->
+</article>
+</div>        
 
-  </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+<div class="side">
+  <header id="banner" class="body">
+    <h1><a href="./">Notes</a></h1>
+     <em>by hevi</em>
+  </header><!-- /#banner -->
+  
+   <ul class="tag-list">        <li class="tag-item"><a href="./tag/blog.html">blog</a> (1)</li>
+        <li class="tag-item"><a href="./tag/draft.html">draft</a> (1)</li>
+        <li class="tag-item"><a href="./tag/git.html">git</a> (2)</li>
+        <li class="tag-item"><a href="./tag/process.html">process</a> (1)</li>
+        <li class="tag-item"><a href="./tag/python.html">python</a> (2)</li>
+        <li class="tag-item"><a href="./tag/setup.html">setup</a> (1)</li>
+   </ul>
+       
+       
+       
+  <nav id="menu"><ul>
+  </ul></nav><!-- /#menu -->
+</div> <!--  side -->        
+        
+</div> <!-- white -->
+        
+<address id="about" class="vcard body">
+ Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+ which takes great advantage of <a href="http://python.org">Python</a>.
+</address><!-- /#about -->
+        
+        
 </body>
 </html>

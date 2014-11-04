@@ -1,122 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="/" rel="alternate"></link><link href="/feeds/hevi.atom.xml" rel="self"></link><id>/</id><updated>2014-10-31T00:00:00+01:00</updated><entry><title>Pelican usage notes</title><link href="/pelican-usage-notes.html" rel="alternate"></link><updated>2014-10-31T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2014-10-31:pelican-usage-notes.html</id><summary type="html">&lt;div class="section" id="setup-notes"&gt;
-&lt;h2&gt;Setup notes&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="URL_PREFIX/" rel="alternate"></link><link href="URL_PREFIX/feeds/hevi.atom.xml" rel="self"></link><id>URL_PREFIX/</id><updated>2014-10-31T00:00:00+01:00</updated><entry><title>Pelican usage notes</title><link href="URL_PREFIX/pelican-usage-notes.html" rel="alternate"></link><updated>2014-10-31T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2014-10-31:URL_PREFIX/pelican-usage-notes.html</id><summary type="html">&lt;div class="section" id="install-software"&gt;
+&lt;h2&gt;Install software&lt;/h2&gt;
+&lt;p&gt;Install packages:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt; pip3 install pelican markdown ghp-import watchdog
+&lt;/pre&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://blog.getpelican.com/"&gt;http://blog.getpelican.com/&lt;/a&gt; pelican&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://pythonhosted.org/Markdown/"&gt;https://pythonhosted.org/Markdown/&lt;/a&gt; markdown&lt;/p&gt;
+&lt;p&gt;ghp-import is a python script that imports a given directory tree into local
+current git repository as gh-pages branch, which can later pushed into
+github.&lt;/p&gt;
+&lt;p&gt;watchdog&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="setup-blog-directory"&gt;
+&lt;h2&gt;Setup blog directory&lt;/h2&gt;
+&lt;p&gt;Make a directory or use existing one. ~/wrk/blog is used here and CWD there is
+assumed on later examples.&lt;/p&gt;
 &lt;p&gt;Initialize files:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
+&amp;gt; cd ~/wrk/blog
 &amp;gt; mv .project .project-no
 &amp;gt; pelican-quickstart
 &amp;gt; mv .project-no .project
 &lt;/pre&gt;
-&lt;p&gt;Move eclipse project file away, pelican-quickstart confuses with it
-and back after pelican-quickstart.&lt;/p&gt;
+&lt;p&gt;Move eclipse project file away (if any), pelican-quickstart confuses with it.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="run-notes"&gt;
 &lt;h2&gt;Run notes&lt;/h2&gt;
 &lt;p&gt;First terminal:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;gt; cd ~/wrk/blog
 &amp;gt; make serve
 &lt;/pre&gt;
 &lt;p&gt;and open browser to &lt;a class="reference external" href="http://localhost:8000"&gt;http://localhost:8000&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Second terminal:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;gt; cd ~/wrk/blog
 &amp;gt; pelican -r
 &lt;/pre&gt;
-&lt;p&gt;This run until there rst syntax error, then restart pelican -r on rst errors.&lt;/p&gt;
-&lt;p&gt;make devserver does not practically work, because pelican process terminates on
-rst text errors. pelican .r does not work either. develop_server.sh also messes
-up with pid-file.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="section" id="beam-up-to-github-pages"&gt;
-&lt;h2&gt;Beam up to github pages&lt;/h2&gt;
-&lt;p&gt;Install ghp-import:&lt;/p&gt;
+&lt;p&gt;This run until there rst syntax error, then restart pelican -r again.&lt;/p&gt;
+&lt;p&gt;OR&lt;/p&gt;
+&lt;p&gt;Use file modify watch program to run pelican again, Makefile fragment:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
-&amp;gt; pip3 install ghp-import
+rerun:
+  watchmedo shell-command  -i &amp;quot;*output/*;*cache/*&amp;quot;  -W -R -c &amp;quot;make html&amp;quot; .
 &lt;/pre&gt;
 &lt;/div&gt;
-</summary><category term="setup"></category></entry><entry><title>Creating user github pages</title><link href="/creating-user-github-pages.html" rel="alternate"></link><updated>2013-04-22T00:00:00+02:00</updated><author><name>Hevi</name></author><id>tag:,2013-04-22:creating-user-github-pages.html</id><summary type="html">&lt;p&gt;According the instructions in &lt;a class="reference external" href="https://help.github.com/categories/20/articles"&gt;https://help.github.com/categories/20/articles&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Creating user github pages. Project pages has a bit more complex procedure.&lt;/p&gt;
-&lt;p&gt;Not using jekyll.&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;Create repository in github&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img alt="" src="creating-github-pages-01.png" /&gt;
-&lt;ol class="arabic simple" start="2"&gt;
-&lt;li&gt;Clone the repository to local computer&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img alt="" src="creating-github-pages-02.png" /&gt;
-&lt;ol class="arabic simple" start="3"&gt;
-&lt;li&gt;Create test index.html file, commit and push to github&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img alt="" src="creating-github-pages-03.png" /&gt;
-&lt;ol class="arabic simple" start="4"&gt;
-&lt;li&gt;Check results&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img alt="" src="creating-github-pages-04.png" /&gt;
-</summary><category term="blog"></category></entry><entry><title>Pulling with Egit</title><link href="/pulling-with-egit.html" rel="alternate"></link><updated>2013-04-22T00:00:00+02:00</updated><author><name>Hevi</name></author><id>tag:,2013-04-22:pulling-with-egit.html</id><summary type="html">&lt;p&gt;Pulling from remote repository with Egit does not
+&lt;div class="section" id="beam-up-to-github-user-pages"&gt;
+&lt;h2&gt;Beam up to github user pages&lt;/h2&gt;
+&lt;p&gt;Makefile fragment (full &lt;a class="reference external" href="https://github.com/hevi9/blog/blob/master/Makefile"&gt;https://github.com/hevi9/blog/blob/master/Makefile&lt;/a&gt;):&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+github: publish
+  ghp-import -n $(OUTPUTDIR)
+  git push -f git&amp;#64;github.com:$(GHP_USER)/$(GHP_USER).github.io.git gh-pages:master
+&lt;/pre&gt;
+&lt;p&gt;Import output directory into local git repo as gh-pages branch and the push
+gh-pages into remote github user pages repo as master branch. Note: this uses
+-f force overwrite on push so existing remote files are destroyed which is ok
+on this case.&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.4.0/tips.html"&gt;http://docs.getpelican.com/en/3.4.0/tips.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</summary><category term="setup"></category><category term="blog"></category><category term="python"></category></entry><entry><title>Pulling with Egit</title><link href="URL_PREFIX/pulling-with-egit.html" rel="alternate"></link><updated>2013-04-22T00:00:00+02:00</updated><author><name>Hevi</name></author><id>tag:,2013-04-22:URL_PREFIX/pulling-with-egit.html</id><summary type="html">&lt;p&gt;Pulling from remote repository with Egit does not
 always work right.&lt;/p&gt;
 &lt;p&gt;&amp;lt;project&amp;gt; -&amp;gt; Team -&amp;gt; Pull might give this:&lt;/p&gt;
-&lt;img alt="" src="egit-pull-error.png" /&gt;
+&lt;img alt="" src="URL_PREFIX/images/egit-pull-error.png" /&gt;
 &lt;p&gt;which is incorrect information.&lt;/p&gt;
 &lt;p&gt;Workaround is to revert command line git (as usual):&lt;/p&gt;
-&lt;img alt="" src="egit-pull-error-really.png" style="width: 90%;" /&gt;
-</summary><category term="git"></category></entry><entry><title>Creating static blog generator</title><link href="/creating-static-blog-generator.html" rel="alternate"></link><updated>2013-03-21T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2013-03-21:creating-static-blog-generator.html</id><summary type="html">&lt;div class="section" id="docutils"&gt;
-&lt;h2&gt;Docutils&lt;/h2&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;Create a parser:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-parser = docutils.parsers.rst.Parser()
-&lt;/pre&gt;
-&lt;p&gt;Several optional arguments may be passed to modify the parser's behavior.
-Please see Customizing the Parser below for details.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Gather input (a multi-line string), by reading a file or the standard
-input:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-input = sys.stdin.read()
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Create a new empty &lt;cite&gt;docutils.nodes.document&lt;/cite&gt; tree:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-document = docutils.utils.new_document(source, settings)
-&lt;/pre&gt;
-&lt;p&gt;See &lt;cite&gt;docutils.utils.new_document()&lt;/cite&gt; for parameter details.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;Run the parser, populating the document tree:&lt;/p&gt;
-&lt;pre class="literal-block"&gt;
-parser.parse(input, document)
-&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://kaizer.se/wiki/rst_customize.py"&gt;http://kaizer.se/wiki/rst_customize.py&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docutils.sourceforge.net/docs/dev/hacking.html"&gt;http://docutils.sourceforge.net/docs/dev/hacking.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Related&lt;/p&gt;
-&lt;p&gt;pelican &lt;a class="reference external" href="https://github.com/getpelican/pelican/"&gt;https://github.com/getpelican/pelican/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://www.voidspace.org.uk/python/firedrop2/"&gt;http://www.voidspace.org.uk/python/firedrop2/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://pyblosxom.github.com/"&gt;http://pyblosxom.github.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;mynt &lt;a class="reference external" href="https://github.com/Anomareh/mynt"&gt;https://github.com/Anomareh/mynt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;wok&lt;/p&gt;
-&lt;p&gt;frozen flask&lt;/p&gt;
-&lt;p&gt;hyde &lt;a class="reference external" href="https://github.com/lakshmivyas/hyde"&gt;https://github.com/lakshmivyas/hyde&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;tinkerer&lt;/p&gt;
-&lt;p&gt;nikola &lt;a class="reference external" href="https://github.com/ralsina/nikola"&gt;https://github.com/ralsina/nikola&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;chisel &lt;a class="reference external" href="https://github.com/dz/chisel"&gt;https://github.com/dz/chisel&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;growl &lt;a class="reference external" href="https://github.com/xfire/growl/tree"&gt;https://github.com/xfire/growl/tree&lt;/a&gt;&lt;/p&gt;
-&lt;pre class="code python literal-block"&gt;
-&lt;span class="nd"&gt;&amp;#64;memcache_decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'rst_parser'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_parse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial_header_level&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;transform_doctitle&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;story&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;parts&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;publish_parts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;story&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;writer_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;'html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-        &lt;span class="n"&gt;settings_overrides&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="s"&gt;'initial_header_level'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;initial_header_level&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-            &lt;span class="s"&gt;'doctitle_xform'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;transform_doctitle&lt;/span&gt;
-            &lt;span class="p"&gt;})&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;parts&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;'body'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-</summary><category term="blog"></category></entry><entry><title>Making remote git repository</title><link href="/making-remote-git-repository.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2013-03-20:making-remote-git-repository.html</id><summary type="html">&lt;p&gt;To the remote server:&lt;/p&gt;
+&lt;img alt="" src="URL_PREFIX/images/egit-pull-error-really.png" style="width: 80%;" /&gt;
+</summary><category term="git"></category></entry><entry><title>Making remote git repository</title><link href="URL_PREFIX/making-remote-git-repository.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2013-03-20:URL_PREFIX/making-remote-git-repository.html</id><summary type="html">&lt;p&gt;To the remote server:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 local&amp;gt; ssh remote.net
 &amp;gt; cd /home/user/git
@@ -136,16 +85,5 @@ local&amp;gt; ssh remote.net
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/"&gt;http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</summary><category term="git"></category></entry><entry><title>EGit and Git Usage</title><link href="/egit-and-git-usage.html" rel="alternate"></link><updated>2013-03-11T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2013-03-11:egit-and-git-usage.html</id><summary type="html">&lt;p&gt;Setup&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;GH github&lt;/li&gt;
-&lt;li&gt;WS workstation&lt;/li&gt;
-&lt;li&gt;SR server&lt;/li&gt;
-&lt;li&gt;LT laptop&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;div class="section" id="importing-a-project-from-gh-github-to-ws-eclipse"&gt;
-&lt;h2&gt;Importing a project from GH github to WS eclipse&lt;/h2&gt;
-&lt;/div&gt;
-</summary><category term="git"></category></entry></feed>
+</summary><category term="git"></category></entry><entry><title>Python psutil usage</title><link href="URL_PREFIX/python-psutil-usage.html" rel="alternate"></link><updated>1111-11-11T00:00:00+00:09</updated><author><name>Hevi</name></author><id>tag:,1111-11-11:URL_PREFIX/python-psutil-usage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://pythonhosted.org/psutil/"&gt;https://pythonhosted.org/psutil/&lt;/a&gt;&lt;/p&gt;
+</summary><category term="python"></category><category term="process"></category><category term="draft"></category></entry></feed>

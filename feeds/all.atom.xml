@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>URL_PREFIX/</link><description>by hevi</description><atom:link href="URL_PREFIX/feeds/hevi.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 31 Oct 2014 00:00:00 +0100</lastBuildDate><item><title>Pelican usage notes</title><link>URL_PREFIX/pelican-usage-notes.html</link><description>&lt;div class="section" id="install-software"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="URL_PREFIX/" rel="alternate"></link><link href="URL_PREFIX/feeds/all.atom.xml" rel="self"></link><id>URL_PREFIX/</id><updated>2014-10-31T00:00:00+01:00</updated><entry><title>Pelican usage notes</title><link href="URL_PREFIX/pelican-usage-notes.html" rel="alternate"></link><updated>2014-10-31T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2014-10-31:URL_PREFIX/pelican-usage-notes.html</id><summary type="html">&lt;div class="section" id="install-software"&gt;
 &lt;h2&gt;Install software&lt;/h2&gt;
 &lt;p&gt;Install packages:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -58,14 +58,14 @@ gh-pages into remote github user pages repo as master branch. Note: this uses
 on this case.&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.4.0/tips.html"&gt;http://docs.getpelican.com/en/3.4.0/tips.html&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Hevi</dc:creator><pubDate>Fri, 31 Oct 2014 00:00:00 +0100</pubDate><guid>tag:,2014-10-31:URL_PREFIX/pelican-usage-notes.html</guid><category>setup</category><category>blog</category><category>python</category></item><item><title>Pulling with Egit</title><link>URL_PREFIX/pulling-with-egit.html</link><description>&lt;p&gt;Pulling from remote repository with Egit does not
+</summary><category term="setup"></category><category term="blog"></category><category term="python"></category></entry><entry><title>Pulling with Egit</title><link href="URL_PREFIX/pulling-with-egit.html" rel="alternate"></link><updated>2013-04-22T00:00:00+02:00</updated><author><name>Hevi</name></author><id>tag:,2013-04-22:URL_PREFIX/pulling-with-egit.html</id><summary type="html">&lt;p&gt;Pulling from remote repository with Egit does not
 always work right.&lt;/p&gt;
 &lt;p&gt;&amp;lt;project&amp;gt; -&amp;gt; Team -&amp;gt; Pull might give this:&lt;/p&gt;
 &lt;img alt="" src="URL_PREFIX/images/egit-pull-error.png" /&gt;
 &lt;p&gt;which is incorrect information.&lt;/p&gt;
 &lt;p&gt;Workaround is to revert command line git (as usual):&lt;/p&gt;
 &lt;img alt="" src="URL_PREFIX/images/egit-pull-error-really.png" style="width: 80%;" /&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Hevi</dc:creator><pubDate>Mon, 22 Apr 2013 00:00:00 +0200</pubDate><guid>tag:,2013-04-22:URL_PREFIX/pulling-with-egit.html</guid><category>git</category></item><item><title>Making remote git repository</title><link>URL_PREFIX/making-remote-git-repository.html</link><description>&lt;p&gt;To the remote server:&lt;/p&gt;
+</summary><category term="git"></category></entry><entry><title>Making remote git repository</title><link href="URL_PREFIX/making-remote-git-repository.html" rel="alternate"></link><updated>2013-03-20T00:00:00+01:00</updated><author><name>Hevi</name></author><id>tag:,2013-03-20:URL_PREFIX/making-remote-git-repository.html</id><summary type="html">&lt;p&gt;To the remote server:&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 local&amp;gt; ssh remote.net
 &amp;gt; cd /home/user/git
@@ -85,5 +85,5 @@ local&amp;gt; ssh remote.net
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/"&gt;http://qugstart.com/blog/ruby-and-rails/create-a-new-git-remote-repository-from-some-local-files-or-local-git-repository/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Hevi</dc:creator><pubDate>Wed, 20 Mar 2013 00:00:00 +0100</pubDate><guid>tag:,2013-03-20:URL_PREFIX/making-remote-git-repository.html</guid><category>git</category></item><item><title>Python psutil usage</title><link>URL_PREFIX/python-psutil-usage.html</link><description>&lt;p&gt;&lt;a class="reference external" href="https://pythonhosted.org/psutil/"&gt;https://pythonhosted.org/psutil/&lt;/a&gt;&lt;/p&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Hevi</dc:creator><pubDate>Sat, 11 Nov 1111 00:00:00 +0009</pubDate><guid>tag:,1111-11-11:URL_PREFIX/python-psutil-usage.html</guid><category>python</category><category>process</category><category>draft</category></item></channel></rss>
+</summary><category term="git"></category></entry><entry><title>Python psutil usage</title><link href="URL_PREFIX/python-psutil-usage.html" rel="alternate"></link><updated>1111-11-11T00:00:00+00:09</updated><author><name>Hevi</name></author><id>tag:,1111-11-11:URL_PREFIX/python-psutil-usage.html</id><summary type="html">&lt;p&gt;&lt;a class="reference external" href="https://pythonhosted.org/psutil/"&gt;https://pythonhosted.org/psutil/&lt;/a&gt;&lt;/p&gt;
+</summary><category term="python"></category><category term="process"></category><category term="draft"></category></entry></feed>
